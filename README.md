@@ -27,13 +27,13 @@ Next, edit the `config/packages/bart/ab/config.php` file. The following configur
 
 
 ### Enabled
-Enables or disbales the A/B testing.
+Enables or disables the A/B testing.
 
     'enabled' => true
 
 
 ### Default
-If A/B testing is disbaled, `AB::getCurrentTest()` will return this.
+If A/B testing is disabled, `AB::getCurrentTest()` will return this.
 
     'default' => 'none'
 
@@ -52,7 +52,7 @@ The above (default) configuration will display teaser version 2 to 50% of your u
 
 Usage
 -----
-After you have defined your tests and enabled testing in the config you can start designing your A/B tests. It's as easy as 1-2-3 because the only thing you need to do is displaying a different peace of content for each test. Let's assume you have defined the tests from above, your view could look like this:
+After you have defined your tests and enabled testing in the config you can start designing your A/B tests. It's as easy as 1-2-3 because the only thing you need to do is displaying a different piece of content for each test. Let's assume you have defined the tests from above, your view could look like this:
 
     @test('teaser1')
         Teaser 1 is being displayed
@@ -68,11 +68,11 @@ After you have defined your tests and enabled testing in the config you can star
 
 
 ### Tracking
-This package doesn't handle any goal or conversion tracking because every company is approaching this in a slightly different way. We would suggest to use a custom Google Analytics dimension and pass the assigned test version in your master view:
+This package doesn't handle any goal or conversion tracking because every company is approaching this in a slightly different way. We would suggest using a custom Google Analytics dimension and pass the assigned test version in your master view:
 
     dataLayer.push({'version': '{{ AB::getCurrentTest() }}'});
 
 
 Contribution and questions
 -------
-If you have any questions or suggestions please feel free to ask or create megre request. Happy testing!
+If you have any questions or suggestions please feel free to ask or create a merge request. Happy testing!
